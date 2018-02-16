@@ -120,7 +120,7 @@ void MainWindow::on_picker_appended (const QPoint &pos)
         if ( item->rtti() == QwtPlotItem::Rtti_PlotShape )
         {
             QwtPlotShapeItem *theShape = static_cast<QwtPlotShapeItem *>(item);
-            theShape->setPen(Qt::red, 2);
+            theShape->setPen(Qt::red, 3);
             QBrush brush = theShape->brush();
             QColor color = brush.color();
             color.setAlpha(64);
@@ -131,7 +131,7 @@ void MainWindow::on_picker_appended (const QPoint &pos)
         if ( item->rtti() == QwtPlotItem::Rtti_PlotCurve )
         {
             QwtPlotCurve *theCurve = static_cast<QwtPlotCurve *>(item);
-            curve->setPen(Qt::darkGreen);
+            curve->setPen(Qt::red, 3);
         }
 
         plot->replot();
