@@ -228,7 +228,7 @@ QwtPlotItem* MainWindow::itemAt( const QPoint& pos ) const
 
                 qWarning() << "curve dist =" << dist;
 
-                if ( dist <= 10 ) return static_cast<QwtPlotItem *>(curveItem);
+                if ( dist <= 5 ) return static_cast<QwtPlotItem *>(curveItem);
             }
         }
         if ( item->isVisible() && item->rtti() == QwtPlotItem::Rtti_PlotShape )
