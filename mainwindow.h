@@ -6,6 +6,8 @@
 class QwtPlot;
 class QwtPlotCurve;
 class QwtPicker;
+class QwtPlotItem;
+class QwtPlotShapeItem;
 
 namespace Ui {
 class MainWindow;
@@ -18,6 +20,8 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+    void reset();
+    QwtPlotItem* itemAt( const QPoint& pos ) const;
 
 public slots:
     void on_picker_activated (bool on);
@@ -28,10 +32,11 @@ public slots:
     void on_picker_changed (const QPolygon &selection);
 
 private:
-    Ui::MainWindow *ui;
-    QwtPlot *plot;
-    QwtPlotCurve *curve;
-    QwtPicker *picker;
+    Ui::MainWindow   *ui;
+    QwtPlot          *plot;
+    QwtPlotCurve     *curve;
+    QwtPlotShapeItem *shape;
+    QwtPicker        *picker;
 };
 
 #endif // MAINWINDOW_H
